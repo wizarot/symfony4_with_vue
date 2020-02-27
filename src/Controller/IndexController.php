@@ -38,7 +38,7 @@ class IndexController extends AbstractController
             $data = $this->serializer->serialize($userClone, JsonEncoder::FORMAT);
         }
 
-        return $this->render('base.html.twig', [
+        return $this->render('vueApp.html.twig', [
             'isAuthenticated' => json_encode($user !== null),
             'user' => $data ?? json_encode($data),
         ]);
